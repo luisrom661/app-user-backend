@@ -15,11 +15,11 @@ Para este servidor he usado las siguientes técnologias y paquetes:
 - [JWT] - Creación de tokens de acceso que permiten la propagación de identidad y privilegios.
 - [Bcryptjs] - Paquete de una función hash para cifrar la contraseña.
 
-Puedes descagar este [Repositorio público][luisrom] para probarlo o lo que quieras, se encuentra en GitHub.
+Puedes descagar este [Repositorio público][tadhack-backend] para probarlo o lo que quieras, se encuentra en GitHub.
 
 ## Instalación
 
-Este servidor web requiere [Node JS](https://nodejs.org/) v10+ o superior para correr.
+Este servidor web requiere [Node JS](https://nodejs.org/) v18+ o superior para correr.
 
 Instala las dependencias y devDependencies e inicia el servidor.
 
@@ -62,8 +62,8 @@ Para ver una copia de esta licencia, visita https://creativecommons.org/licenses
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
-   [luisrom]: <https://github.com/luisrom661/node-restserver>
-   [git-repo-url]: <https://github.com/luisrom661/node-restserver.git>
+   [tadhack-backend]: <https://github.com/luisrom661/tadhack-backend>
+   [git-repo-url]: <https://github.com/luisrom661/tadhack-backend.git>
    [nodejs]: <http://nodejs.org>
    [pnpm]: <https://pnpm.io/es/>
    [express]: <http://expressjs.com>
