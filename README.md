@@ -24,7 +24,7 @@ Este servidor web requiere [Node JS](https://nodejs.org/) v10+ o superior para c
 Instala las dependencias y devDependencies e inicia el servidor.
 
 ```
-cd node-restserver
+cd backend
 pnpm install
 pnpm start:dev
 ```
