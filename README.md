@@ -21,6 +21,12 @@ Puedes descagar este [Repositorio público][tadhack-backend] para probarlo o lo 
 
 Este servidor web requiere [Node JS](https://nodejs.org/) v18+ o superior para correr.
 
+Instalar [Pnpm](https://pnpm.io/es/) en caso de no tenerlo.
+
+```sh
+npm install -g pnpm
+```
+
 Instala las dependencias y devDependencies e inicia el servidor.
 
 ```
