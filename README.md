@@ -1,6 +1,6 @@
 # RESTServer in Node with Express and PostgresSQL
 
-[![NodeJS](https://img.icons8.com/?size=64&id=hsPbhkOH4FMe&format=png)](https://nodejs.org/en)[![Postgres](https://img.icons8.com/?size=64&id=LwQEs9KnDgIo&format=png)](https://www.postgresql.org/)[![JWT](https://img.icons8.com/?size=64&id=rHpveptSuwDz&format=png)](https://jwt.io/)[![Prisma](https://img.icons8.com/?size=64&id=YKKmRFS8Utmm&format=png)](https://www.prisma.io/)[![]()]()
+[![NodeJS](https://img.icons8.com/?size=64&id=hsPbhkOH4FMe&format=png)](https://nodejs.org/en)[![Pnpm](https://iili.io/HQmenZF.png)](https://pnpm.io/es/)[![Postgres](https://img.icons8.com/?size=64&id=LwQEs9KnDgIo&format=png)](https://www.postgresql.org/)[![JWT](https://img.icons8.com/?size=64&id=rHpveptSuwDz&format=png)](https://jwt.io/)[![Prisma](https://img.icons8.com/?size=64&id=YKKmRFS8Utmm&format=png)](https://www.prisma.io/)[![Docker](https://img.icons8.com/?size=64&id=22813&format=png)](https://www.docker.com/)  [![]()]()
 
 RESTServer básico en Node escrito en JavaScript y como gestor de paquetes pnpm.
 
