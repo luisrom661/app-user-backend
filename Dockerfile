@@ -1,32 +1,44 @@
-# Install dependencies only when needed
-FROM node:18-alpine3.15 AS deps
+# Etapa de construcción (builder)
+FROM node:18-alpine3.15 AS builder
 
+# Instala PNPM de forma global
 RUN npm i -g pnpm
 
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+# Asegúrate de tener las dependencias necesarias, incluyendo libc6-compat si es necesario
 RUN apk add --no-cache libc6-compat
+
+# Establece el directorio de trabajo
 WORKDIR /app
 
+# Copia los archivos de configuración de dependencias (package.json y pnpm-lock.yaml)
 COPY package.json pnpm-lock.yaml ./
+
+# Instala las dependencias utilizando PNPM
 RUN pnpm install --no-frozen-lockfile
 
-# Build the app with cache dependencies
-FROM node:18-alpine3.15 AS builder
-RUN npm i -g pnpm
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Copia el código fuente de la aplicación
 COPY . .
-RUN pnpm run build
 
+# Etapa de producción
+FROM node:18-alpine3.15 AS production
 
-# Production image, copy all the files and run next
-FROM node:18-alpine3.15 AS runner
+# Instala PNPM de forma global en la imagen de producción
 RUN npm i -g pnpm
-# Set working directory
+
+# Establece el directorio de trabajo
 WORKDIR /usr/src/app
 
+# Copia los archivos de configuración de dependencias (package.json y pnpm-lock.yaml)
 COPY package.json pnpm-lock.yaml ./
 
+# Instala las dependencias utilizando PNPM
 RUN pnpm install --no-frozen-lockfile
 
-COPY --from=builder /app/dist ./dist
+# Copia los archivos de la aplicación desde la etapa de construcción (builder)
+COPY --from=builder /app ./app
+
+# Expone el puerto en el que se ejecutará tu aplicación (ajusta esto según tus necesidades)
+EXPOSE 3000
+
+# Comando para ejecutar la aplicación en modo producción (ajusta esto según tu script de inicio)
+CMD ["node", "app/app.js"]
