@@ -35,10 +35,10 @@ model Profile {
 }
 
 model User {
-  id       String   @id @default(uuid())
-  email    String   
-  name     String?
-  lastName String?
-  posts    Post[]
-  profile  Profile?
+  id        String   @id @default(uuid())
+  email     String
+  firstName String?
+  lastName  String?
+  posts     Post[]
+  profile   Profile?
 }
