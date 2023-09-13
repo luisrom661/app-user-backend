@@ -1,6 +1,5 @@
 # Install dependencies only when needed  
-FROM node:18-alpine3.15
-
+FROM node:18
 # Instala PNPM de forma global
 # RUN npm install -g pnpm
 
@@ -12,6 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN npm install
+RUN npm i -g prisma
 
 # New line added
 RUN npm prisma db push --schema='./prisma/schema.prisma'
