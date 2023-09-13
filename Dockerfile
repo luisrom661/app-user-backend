@@ -8,7 +8,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 # Build the app with cache dependencies
 FROM node:18-alpine3.15 AS builder
@@ -27,6 +27,6 @@ WORKDIR /usr/src/app
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 COPY --from=builder /app/dist ./dist
