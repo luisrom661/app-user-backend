@@ -4,8 +4,8 @@ FROM node:18-alpine3.15
 # Instala PNPM de forma global
 RUN npm install -g pnpm
 
-# Establece el directorio de trabajo en /usr/src/app
-WORKDIR /usr/src/app
+# Establece el directorio de trabajo en /app
+WORKDIR /app
 
 # Copia los archivos de configuración de dependencias (package.json y pnpm-lock.yaml)
 COPY package.json pnpm-lock.yaml ./
@@ -14,7 +14,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --no-frozen-lockfile
 
 # Ejecutar el comando prisma generate
-RUN pnpx prisma generate --schema=./prisma/schema.prisma
+RUN pnpx prisma generate --schema='./app/prisma/schema.prisma'
 
 
 # Copia todo el contenido de tu aplicación al directorio de trabajo en el contenedor
