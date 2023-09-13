@@ -3,7 +3,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../node_modules/.prisma/client"
 }
 
 // datasource db {
@@ -37,7 +36,7 @@ model Profile {
 
 model User {
   id       String   @id @default(uuid())
-  email    String   @unique
+  email    String   
   name     String?
   lastName String?
   posts    Post[]
