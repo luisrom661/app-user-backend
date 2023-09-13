@@ -1,5 +1,5 @@
 # Install dependencies only when needed  
-FROM node:18-alpine3.15 AS deps
+FROM node:18-alpine3.15
 
 # Instala PNPM de forma global
 RUN npm install -g pnpm
