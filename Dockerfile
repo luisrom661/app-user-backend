@@ -13,6 +13,10 @@ COPY package.json pnpm-lock.yaml ./
 # Instala las dependencias utilizando PNPM --no-frozen-lockfile
 RUN pnpm install --no-frozen-lockfile
 
+# Ejecutar el comando prisma generate
+RUN pnpx prisma generate
+
+
 # Copia todo el contenido de tu aplicación al directorio de trabajo en el contenedor
 COPY . .
 
