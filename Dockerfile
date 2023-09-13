@@ -14,7 +14,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --no-frozen-lockfile
 
 # Ejecutar el comando prisma generate
-RUN pnpx prisma generate
+RUN pnpx prisma generate --schema=./prisma/schema.prisma
 
 
 # Copia todo el contenido de tu aplicación al directorio de trabajo en el contenedor
