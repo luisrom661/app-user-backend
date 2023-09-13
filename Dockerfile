@@ -14,8 +14,8 @@ COPY package*.json ./
 RUN npm install
 
 # New line added
-RUN npx prisma db push --schema='./prisma/schema.prisma'
-RUN npx prisma generate --schema='./prisma/schema.prisma'
+# RUN npx prisma db push --schema='./prisma/schema.prisma'
+# RUN npx prisma generate --schema='./prisma/schema.prisma'
 
 # Copia todo el contenido de tu aplicación al directorio de trabajo en el contenedor
 COPY . .
