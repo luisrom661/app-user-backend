@@ -7,11 +7,11 @@ FROM node:18-alpine3.15
 # Establece el directorio de trabajo en /app
 WORKDIR /app
 
-RUN npm install
-
 # Copia los archivos de configuración de dependencias (package.json y pnpm-lock.yaml)
 # COPY package.json pnpm-lock.yaml ./
 COPY package*.json ./
+
+RUN npm install
 
 # New line added
 COPY prisma ./prisma/
