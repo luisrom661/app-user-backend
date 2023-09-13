@@ -1,6 +1,5 @@
 //import { response, request } from 'express'
 import { PrismaClient } from '@prisma/client';
-import { response } from 'express';
 
 const prisma = new PrismaClient();
 //const prisma = new PrismaClient({ datasources: {  db: { url: process.env.FL0_DATABASE_URL } } });
@@ -26,6 +25,5 @@ export const getUsers = async () => {
       },
     });
     console.dir(allUsers, { depth: null });
-
-    response.json(allUsers);
+    console.log(allUsers);
 }
