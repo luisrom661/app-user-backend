@@ -1,8 +1,8 @@
 //import { response, request } from 'express'
 import { PrismaClient } from '@prisma/client';
 
-//const prisma = new PrismaClient();
-const prisma = new PrismaClient({ datasources: {  db: { url: process.env.FL0_DATABASE_URL } } });
+const prisma = new PrismaClient();
+//const prisma = new PrismaClient({ datasources: {  db: { url: process.env.FL0_DATABASE_URL } } });
 
 export const getUsers = async () => {
     await prisma.user.create({
