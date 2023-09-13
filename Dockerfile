@@ -14,8 +14,8 @@ RUN npm install
 RUN npm i -g prisma
 
 # New line added
-RUN npm prisma db push --schema='./prisma/schema.prisma'
-RUN npm prisma generate --schema='./prisma/schema.prisma'
+RUN npx prisma db push --schema='./prisma/schema.prisma'
+RUN npx prisma generate --schema='./prisma/schema.prisma'
 
 # Copia todo el contenido de tu aplicación al directorio de trabajo en el contenedor
 COPY . .
