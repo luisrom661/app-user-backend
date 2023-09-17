@@ -25,6 +25,7 @@ Instalar [Pnpm](https://pnpm.io/es/) en caso de no tenerlo.
 
 ```sh
 npm install -g pnpm
+pnpm i -g pnpm
 ```
 
 Instala las dependencias y devDependencies e inicia el servidor.
