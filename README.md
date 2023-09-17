@@ -43,19 +43,7 @@ Ejecutar el comando para crear el contenedor de la base de datos en Docker.
 docker-compose up -d
 ```
 
-## Migraciones para Prisma
-Ejecutar el comando para crear las primeras migraciones de la base de datos.
-```
-pnpx prisma migrate dev --name init
-```
-Luego, ejecutar el comando para generar el cliente de Prisma.
-```
-pnpx prisma generate
-```
-y por último, ejecutar el comando para aplicar los cambios en la base de datos.
-```
-prisma db push
-```
+## Migraciones para TypeORM
 
 ## License
 
