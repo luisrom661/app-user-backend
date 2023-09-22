@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import { userRoutes } from '../routes/user.js';
+import { userRoutes } from '../routes/user.routes.js';
 import { dbConnection } from '../db/db.js';
 
 export class Server {
