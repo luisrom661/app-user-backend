@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 
 import { userRoutes } from '../routes/user.routes.js';
 import { dbConnection } from '../db/db.js';
@@ -36,9 +35,6 @@ export class Server {
 
     // Directorio público
     this.app.use(express.static('public'));
-
-    // Body parser
-    this.app.use(bodyParser.json());
   }
 
   routes() {
