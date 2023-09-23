@@ -2,12 +2,13 @@ import express from 'express';
 import cors from 'cors';
 
 import { userRoutes } from './users/infrastructure/user.routes.js';
+import { config } from './config/config.js';
 import DbConnection from './adapters/database/mongodb/mongodb.js';
 
 export class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT ?? 3000;
+    this.port = config.port ?? 3001;
     this.paths = {
       users: '/api/users',
     };

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { config } from '../../../config/config.js';
 
 export default class DbConnection {
   constructor() {
@@ -7,7 +8,7 @@ export default class DbConnection {
 
   async connect() {
     try {
-      await mongoose.connect(process.env.MONGODB_CNN, {
+      await mongoose.connect(config.dbHost, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });

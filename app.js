@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv';
 import { Server } from './src/server.js';
 
