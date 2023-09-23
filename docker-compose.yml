@@ -2,13 +2,11 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:15.4
+    image: mongo:7
     restart: always
     ports:
-      - "5432:5432"
+      - 27017:27017
     environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_NAME}
-    container_name: tadhackdb
+      MONGODB_DATABASE: tadhack-database
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ./mongo:/data/db
