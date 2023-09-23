@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 
-import { userRoutes } from '../routes/user.js';
-import { dbConnection } from '../db/db.js';
+import { userRoutes } from './users/infrastructure/user.routes.js';
+import DbConnection from './adapters/database/mongodb/mongodb.js';
 
 export class Server {
   constructor() {
@@ -14,16 +14,24 @@ export class Server {
 
     // Middlewares
     this.middlewares();
+    
+    // Crear una instancia de la clase DbConnection
+    this.db = new DbConnection();
 
     // Conexion a la base de datos
     this.conectarDB();
-
+    
     // Rutas de mi aplicación
     this.routes();
   }
 
   async conectarDB() {
-    await dbConnection();
+    try {
+      await this.db.connect(); // Utiliza el método connect de la instancia db
+    } catch (error) {
+      console.error('Error connecting to the database:', error);
+      process.exit(1); // Opcional: Si la conexión falla, puedes salir de la aplicación.
+    }
   }
 
   middlewares() {

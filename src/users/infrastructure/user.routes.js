@@ -3,6 +3,7 @@ import { Router } from 'express';
 
 const router = Router();
 
+//TODO: Implementar rutas de usuario
 //router.get('/', getUsers);
 
 export const userRoutes = router;
