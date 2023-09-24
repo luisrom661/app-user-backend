@@ -1,8 +1,12 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import { getUsers, createUser, updateUser } from '../infrastructure/user.controller.js';
-import { deleteUser } from '../application/user.use-cases.js';
+import {
+	getUsers,
+	createUser,
+	updateUser,
+	deleteUser,
+} from '../infrastructure/user.controller.js';
 import {
 	validateFields,
 	validateJWT,
@@ -16,14 +20,13 @@ import {
 
 const router = Router();
 
-//TODO: Implementar rutas de usuario
 router.get('/', getUsers);
 
 router.post(
 	'/',
 	[
 		check('name', 'El nombre es obligatorio').not().isEmpty(),
-		check('password', 'La contraseña debe tener 8 letras').isLength({
+		check('password', 'La contraseña debe tener 8 carácteres').isLength({
 			min: 8,
 		}),
 		check('email', 'El correo no es válido').isEmail(),

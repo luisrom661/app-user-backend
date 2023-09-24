@@ -1,4 +1,3 @@
-//TODO: implementar los repository de usuario
 import { User } from '../../adapters/database/mongodb/schemas/index.js';
 
 export class UserRepository {
@@ -25,14 +24,20 @@ export class UserRepository {
 			password,
 			role,
 		};
-		const updatedUser = await User.findByIdAndUpdate(id, updateFields, {new: true});
+		const updatedUser = await User.findByIdAndUpdate(id, updateFields, {
+			new: true,
+		});
 		return updatedUser;
 	}
 
 	async deleteUser(id) {
 		// Physically delete
 		// const deletedUser = await User.findByIdAndDelete(id);
-		const deletedUser = await User.findByIdAndUpdate(id,{ state: false },{ new: true });
+		const deletedUser = await User.findByIdAndUpdate(
+			id,
+			{ state: false },
+			{ new: true },
+		);
 		return deletedUser;
 	}
 }
