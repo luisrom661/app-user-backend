@@ -17,4 +17,22 @@ export class UserRepository {
 		await newUser.save();
 		return newUser;
 	}
+
+	async updateUser(id, name, email, password, role) {
+		const updateFields = {
+			name,
+			email,
+			password,
+			role,
+		};
+		const updatedUser = await User.findByIdAndUpdate(id, updateFields, {new: true});
+		return updatedUser;
+	}
+
+	async deleteUser(id) {
+		// Physically delete
+		// const deletedUser = await User.findByIdAndDelete(id);
+		const deletedUser = await User.findByIdAndUpdate(id,{ state: false },{ new: true });
+		return deletedUser;
+	}
 }

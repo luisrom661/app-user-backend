@@ -21,34 +21,34 @@ import bcryptjs from 'bcryptjs';
 // 	});
 // };
 
-const updateUser = async (req, res = response) => {
-	const id = req.params.id;
-	const { _id, password, google, email, ...rest } = req.body;
-	if (password) {
-		// Encrypt (Hash) the password
-		const salt = bcryptjs.genSaltSync();
-		rest.password = bcryptjs.hashSync(password, salt);
-	}
+// const updateUser = async (req, res = response) => {
+// 	const id = req.params.id;
+// 	const { _id, password, google, email, ...rest } = req.body;
+// 	if (password) {
+// 		// Encrypt (Hash) the password
+// 		const salt = bcryptjs.genSaltSync();
+// 		rest.password = bcryptjs.hashSync(password, salt);
+// 	}
 
-	const user = await User.findByIdAndUpdate(id, rest, { new: true });
-	res.status(201).json(user);
-};
+// 	const user = await User.findByIdAndUpdate(id, rest, { new: true });
+// 	res.status(201).json(user);
+// };
 
-const createUser = async (req, res = response) => {
-	const { name, email, password, role } = req.body;
-	const user = new User({ name, email, password, role });
+// const createUser = async (req, res = response) => {
+// 	const { name, email, password, role } = req.body;
+// 	const user = new User({ name, email, password, role });
 
-	// Encrypt (Hash) the password
-	const salt = bcryptjs.genSaltSync();
-	user.password = bcryptjs.hashSync(password, salt);
+// 	// Encrypt (Hash) the password
+// 	const salt = bcryptjs.genSaltSync();
+// 	user.password = bcryptjs.hashSync(password, salt);
 
-	// Save to the database
-	await user.save();
+// 	// Save to the database
+// 	await user.save();
 
-	res.status(201).json({
-		user,
-	});
-};
+// 	res.status(201).json({
+// 		user,
+// 	});
+// };
 
 const deleteUser = async (req, res = response) => {
 	const { id } = req.params;
@@ -73,4 +73,4 @@ const patchUser = (req, res = response) => {
 	});
 };
 
-export { /*getUsers,*/ updateUser, createUser, deleteUser, patchUser };
+export { /*getUsers,createUser, updateUser,*/ deleteUser, patchUser };

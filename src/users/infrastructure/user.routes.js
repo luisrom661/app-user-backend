@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import { getUsers, createUser } from '../infrastructure/user.controller.js';
-import { updateUser, deleteUser } from '../application/user.use-cases.js';
+import { getUsers, createUser, updateUser } from '../infrastructure/user.controller.js';
+import { deleteUser } from '../application/user.use-cases.js';
 import {
 	validateFields,
 	validateJWT,
