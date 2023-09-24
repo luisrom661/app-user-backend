@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import { userRoutes } from './users/infrastructure/user.routes.js';
+import { authRoutes } from './auth/infrastructure/auth.routes.js';
 import { config } from './config/config.js';
 import DbConnection from './adapters/database/mongodb/mongodb.js';
 
@@ -11,6 +12,7 @@ export class Server {
 		this.port = config.port ?? 3001;
 		this.paths = {
 			users: '/api/users',
+			auth: '/api/auth',
 		};
 
 		// Middlewares
@@ -28,10 +30,10 @@ export class Server {
 
 	async conectarDB() {
 		try {
-			await this.db.connect(); // Utiliza el método connect de la instancia db
+			await this.db.connect();
 		} catch (error) {
 			console.error('Error connecting to the database:', error);
-			process.exit(1); // Opcional: Si la conexión falla, puedes salir de la aplicación.
+			process.exit(1);
 		}
 	}
 
@@ -48,6 +50,7 @@ export class Server {
 
 	routes() {
 		this.app.use(this.paths.users, userRoutes);
+		this.app.use(this.paths.auth, authRoutes);
 	}
 
 	listen() {
