@@ -1,6 +1,6 @@
 # RESTServer in Node with Express and PostgresSQL
 
-[![NodeJS](https://img.icons8.com/?size=64&id=hsPbhkOH4FMe&format=png)](https://nodejs.org/en)[![Pnpm](https://iili.io/HQmenZF.png)](https://pnpm.io/es/)[![Postgres](https://img.icons8.com/?size=64&id=LwQEs9KnDgIo&format=png)](https://www.postgresql.org/)[![JWT](https://img.icons8.com/?size=64&id=rHpveptSuwDz&format=png)](https://jwt.io/)[![Prisma](https://img.icons8.com/?size=64&id=YKKmRFS8Utmm&format=png)](https://www.prisma.io/)[![Docker](https://img.icons8.com/?size=64&id=22813&format=png)](https://www.docker.com/)  [![]()]()
+[![NodeJS](https://img.icons8.com/?size=64&id=hsPbhkOH4FMe&format=png)](https://nodejs.org/en)[![Pnpm](https://iili.io/HQmenZF.png)](https://pnpm.io/es/)[![MongoDB](https://img.icons8.com/?size=64&id=74402&format=png)](https://www.mongodb.com/es)[![JWT](https://img.icons8.com/?size=64&id=rHpveptSuwDz&format=png)](https://jwt.io/)[![Mongoose](https://img.icons8.com/?size=64&id=gKfcEStXI1Hm&format=png)](https://mongoosejs.com/)[![Docker](https://img.icons8.com/?size=64&id=22813&format=png)](https://www.docker.com/)  [![]()]()
 
 RESTServer básico en Node escrito en JavaScript y como gestor de paquetes pnpm.
 
@@ -10,8 +10,8 @@ Para este servidor he usado las siguientes técnologias y paquetes:
 
 - [NodeJS] - Entorno de ejecución para JavaScript/TypeScript.
 - [Express] - Framework de NodeJS para construcciones rápidas de un servidor web.
-- [Postgres] - Sistema de base de datos relacionales SQL de código abierto.
-- [Prisma] - ORM para optimizar las sentencias en PostgresSQL.
+- [MongoDB] - Sistema de base de datos no relacionales NoSQL de código abierto.
+- [Mongoose] - ODM para optimizar las sentencias en MongoDB.
 - [JWT] - Creación de tokens de acceso que permiten la propagación de identidad y privilegios.
 - [Bcryptjs] - Paquete de una función hash para cifrar la contraseña.
 
@@ -63,8 +63,8 @@ Para ver una copia de esta licencia, visita https://creativecommons.org/licenses
    [pnpm]: <https://pnpm.io/es/>
    [express]: <http://expressjs.com>
    [typescript]: <https://www.typescriptlang.org/>
-   [postgres]: <https://www.postgresql.org/>
-   [prisma]: <https://www.prisma.io/>
+   [mongodb]: <https://www.mongodb.com/es>
+   [mongoose]: <https://mongoosejs.com/>
    [jwt]: <https://jwt.io/>
    [bcryptjs]: <https://www.npmjs.com/package/bcryptjs>
    [express-rate-limit]: <https://www.npmjs.com/package/express-rate-limit>
