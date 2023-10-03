@@ -10,3 +10,13 @@ services:
       MONGODB_DATABASE: tadhack-database
     volumes:
       - ./mongo:/data/db
+
+  redis:
+    image: redis:7
+    restart: always
+    ports:
+      - 6379:6379
+    environment:
+      - REDIS_PASSWORD={REDIS_PASSWORD}
+    volumes:
+      - ./redis:/data
