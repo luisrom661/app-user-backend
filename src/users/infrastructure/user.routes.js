@@ -17,11 +17,11 @@ import {
 	emailExists,
 	existsUserById,
 } from '../../helpers/index.js';
-//import { redisRateLimiter } from '../../middlewares/index.js';
+import { validateRateLimiter } from '../../middlewares/index.js';
 
 const router = Router();
 
-router.get('/', getUsers, /*redisRateLimiter*/);
+router.get('/', validateRateLimiter, getUsers);
 
 router.post(
 	'/',

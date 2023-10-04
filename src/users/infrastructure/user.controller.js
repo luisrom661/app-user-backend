@@ -5,15 +5,28 @@ import {
 	DeleteUsersService,
 } from '../application/index.js';
 
+import { redis } from '../../adapters/database/redis/redis.js';
+
 export const getUsers = async (req, res) => {
 	const getUsersService = new GetUsersService();
 	const { limit = 5, from = 0 } = req.query;
 
 	try {
+		const cachedValue = await redis.get('users');
+
+		if (cachedValue) {
+			res.json(JSON.parse(cachedValue));
+			console.log('caching...');
+			return;
+		}
+
 		const result = await getUsersService.execute(
 			Number(limit),
 			Number(from),
 		);
+
+		await redis.set('users', JSON.stringify(result), 'EX', 3600);
+
 		res.json(result);
 	} catch (error) {
 		res.status(400).json({ error: error.message });

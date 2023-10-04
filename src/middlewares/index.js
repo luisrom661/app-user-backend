@@ -1,4 +1,4 @@
-export * from './redis-rate-limiter.js';
+export * from './validate-rate-limiter.js';
 export * from './validate-fields.js';
 export * from './validate-file.js';
 export * from './validate-jwt.js';
