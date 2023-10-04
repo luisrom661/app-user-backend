@@ -6,5 +6,8 @@ export const config = {
 	dbHost: process.env.MONGODB_CNN || 'localhost',
 	secretjwt: process.env.SECRETORPRIVATEKEY,
 	googleClientId: process.env.GOOGLE_CLIENT_ID,
-	redisHost: process.env.REDIS_URL,
+	redisUrl: process.env.REDIS_URL,
+	redisHost: process.env.REDIS_HOST,
+	redisPort: process.env.REDIS_PORT,
+	redisPassword: process.env.REDIS_PASSWORD,
 };
