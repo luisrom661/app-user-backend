@@ -1,4 +1,4 @@
-import { User } from '../../adapters/database/mongodb/schemas/index.js';
+import { User } from '../adapters/database/mongodb/schemas/index.js';
 
 export class AuthRepository {
 	async login(email) {

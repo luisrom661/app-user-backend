@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
 
-import { validateFields } from '../../middlewares/index.js';
-import { login, googleSignIn } from './auth.controller.js';
+import { validateFields } from '../middlewares/index.js';
+import { login, googleSignIn } from '../controllers/index.js';
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import bcryptjs from 'bcryptjs';
 
-import { AuthRepository } from '../domain/auth.repository.js';
+import { AuthRepository } from '../../repositories/index.js';
 import { generateJWT } from '../../helpers/index.js';
 
 export class LoginService {

@@ -1,8 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import { userRoutes } from './users/infrastructure/user.routes.js';
-import { authRoutes } from './auth/infrastructure/auth.routes.js';
+import { userRoutes, authRoutes } from '../src/routes/index.js';
 import { config } from './config/config.js';
 import DbConnection from './adapters/database/mongodb/mongodb.js';
 
