@@ -1,4 +1,4 @@
-import { UserRepository } from '../domain/user.repository.js';
+import { UserRepository } from '../../repositories/index.js';
 
 export class GetUsersService {
 	constructor(userRepository = new UserRepository()) {

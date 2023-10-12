@@ -1,5 +1,4 @@
-//TODO: Implementar el servicio de eliminar usuarios
-import { UserRepository } from '../domain/user.repository.js';
+import { UserRepository } from '../../repositories/index.js';
 
 export class DeleteUsersService {
 	constructor(userRepository = new UserRepository()) {

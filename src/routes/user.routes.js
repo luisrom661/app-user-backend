@@ -6,18 +6,18 @@ import {
 	createUser,
 	updateUser,
 	deleteUser,
-} from '../infrastructure/user.controller.js';
+} from '../controllers/index.js';
 import {
 	validateFields,
 	validateJWT,
 	validateRole,
-} from '../../middlewares/index.js';
+	validateRateLimiter,
+} from '../middlewares/index.js';
 import {
 	isValidRole,
 	emailExists,
 	existsUserById,
-} from '../../helpers/index.js';
-import { validateRateLimiter } from '../../middlewares/index.js';
+} from '../helpers/index.js';
 
 const router = Router();
 

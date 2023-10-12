@@ -1,6 +1,6 @@
 import bcryptjs from 'bcryptjs';
 
-import { UserRepository } from '../domain/user.repository.js';
+import { UserRepository } from '../../repositories/index.js';
 
 export class CreateUsersService {
 	constructor(userRepository = new UserRepository()) {

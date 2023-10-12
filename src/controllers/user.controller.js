@@ -3,9 +3,9 @@ import {
 	CreateUsersService,
 	UpdateUsersService,
 	DeleteUsersService,
-} from '../application/index.js';
+} from '../services/index.js';
 
-import { redis } from '../../adapters/database/redis/redis.js';
+import { redis } from '../adapters/database/redis/redis.js';
 
 export const getUsers = async (req, res) => {
 	const getUsersService = new GetUsersService();
