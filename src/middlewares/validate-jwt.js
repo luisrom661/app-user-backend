@@ -5,13 +5,23 @@ import { User } from '../adapters/database/mongodb/schemas/index.js';
 import { config } from './../config/config.js';
 
 export const validateJWT = async (req = request, res = response, next) => {
-	const token = req.header('x-token');
+
+	const authHeader = req.headers.authorization;
+
+	if (!authHeader) {
+		return res.status(401).json({
+			msg: 'Unauthorized - No token found in the request.',
+		});
+	}
+
+	const token = authHeader.split(' ')[1];
 
 	if (!token) {
 		return res.status(401).json({
-			msg: 'No token found in the request.',
+			msg: 'Unauthorized - No token found in the request.',
 		});
 	}
+	
 	try {
 		const { uid } = jwt.verify(token, config.secretjwt);
 		const user = await User.findById(uid);

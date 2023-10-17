@@ -38,7 +38,12 @@ export class Server {
 
 	middlewares() {
 		// CORS
-		this.app.use(cors());
+		this.app.use(cors(
+			{
+				origin: 'http://localhost:5173',
+				credentials: true,
+			},
+		));
 
 		// Lectura y parseo del body
 		this.app.use(express.json());
