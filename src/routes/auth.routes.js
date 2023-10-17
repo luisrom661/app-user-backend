@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 
 import { validateFields } from '../middlewares/index.js';
-import { login, googleSignIn } from '../controllers/index.js';
+import { login, googleSignIn, profile } from '../controllers/index.js';
 
 const router = Router();
 
@@ -15,6 +15,8 @@ router.post(
 	],
 	login,
 );
+
+router.get('/profile', [], profile);
 
 router.post(
 	'/google',

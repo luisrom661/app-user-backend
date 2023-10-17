@@ -9,4 +9,14 @@ export class AuthRepository {
 		let user = await User.findOne({ email });
 		return user;
 	}
+	async profile(email) {
+		const user = await User.findOne({ email });
+
+		const formattedUser = {
+			name: user.name,
+			email: user.email,
+			role: user.role,
+		};
+		return formattedUser;
+	}
 }
