@@ -7,7 +7,7 @@ services:
     ports:
       - 27017:27017
     environment:
-      MONGODB_DATABASE: tadhack-database
+      MONGODB_DATABASE: app-database
     volumes:
       - ./mongo:/data/db
 
